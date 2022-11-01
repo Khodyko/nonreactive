@@ -16,7 +16,7 @@ public interface BookController {
 
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping("/{id}")
-    Book getBookById(@PathVariable Long id) throws InterruptedException;
+    Book getBookById(@PathVariable Long id);
 
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping("/all")

@@ -20,7 +20,7 @@ public class BookControllerImpl implements BookController {
     }
 
     @Override
-    public Book getBookById(Long id) throws InterruptedException {
+    public Book getBookById(Long id) {
         Long a=0L;
         for (int i = 0; i < 600000; i++) {
                 a++;
