@@ -1,0 +1,24 @@
+server:
+  port: 8083
+spring:
+  liquibase:
+    change-log: classpath:/liquibase/changelog.yml
+    url: jdbc:postgresql://localhost:5432/reactive
+    password: 12345
+    enabled: true
+    user: postgres
+    default-schema: bookshop
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/reactive?currentSchema=bookshop
+    username: postgres
+    password: 12345
+    properties:
+      schema: bookshop
+logging:
+  level:
+    org:
+      springframework:
+        jdbc: DEBUG
+
+

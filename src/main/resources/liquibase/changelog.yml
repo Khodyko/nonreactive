@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Khodyko_Igor
+      changes:
+        - createTable:
+            tableName: book
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: author
+                  type: text
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: text
+                  type: text
+                  constraints:
+                    unique: false
+                    nullable: false
+  - changeSet:
+      id: addAutoIncrement
+      author: Khodyko_Igor
+      changes:
+        - addAutoIncrement:
+            catalogName: book
+            columnDataType: BIGINT
+            columnName: id
+            defaultOnNull: false
+            generationType: ALWAYS
+            incrementBy: 1
+            schemaName: bookshop
+            startWith: 100
+            tableName: book
